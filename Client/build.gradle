@@ -16,6 +16,6 @@ dependencies {
 
 jar {
     manifest {
-        attributes 'Main-Class': 'ru.neochess.phase0.client.ChessClient'
+        attributes 'Main-Class': 'ChessClient'
     }
 }

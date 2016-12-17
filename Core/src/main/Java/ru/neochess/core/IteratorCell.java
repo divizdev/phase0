@@ -25,27 +25,29 @@ public class IteratorCell implements Iterator<Cell> {
     }
 
     public boolean hasNext() {
-        return onlyNext() != null;
+        return currentCell != null;
     }
 
     protected Cell onlyNext() {
-        switch (adjacentCell) {
-            case Left:
-                return currentCell.getLeft();
-            case Right:
-                return currentCell.getRight();
-            case Up:
-                return currentCell.getUp();
-            case Down:
-                return currentCell.getDown();
-            case LeftDown:
-                return currentCell.getLeftDown();
-            case RightDown:
-                return currentCell.getRightDown();
-            case LeftUp:
-                return currentCell.getLeftUp();
-            case RightUp:
-                return currentCell.getRightUp();
+        if(currentCell!= null) {
+            switch (adjacentCell) {
+                case Left:
+                    return currentCell.getLeft();
+                case Right:
+                    return currentCell.getRight();
+                case Up:
+                    return currentCell.getUp();
+                case Down:
+                    return currentCell.getDown();
+                case LeftDown:
+                    return currentCell.getLeftDown();
+                case RightDown:
+                    return currentCell.getRightDown();
+                case LeftUp:
+                    return currentCell.getLeftUp();
+                case RightUp:
+                    return currentCell.getRightUp();
+            }
         }
 
         return null;
@@ -54,9 +56,6 @@ public class IteratorCell implements Iterator<Cell> {
     public Cell next() {
         Cell returnCell = currentCell;
         currentCell = onlyNext();
-        if (currentCell == null){
-            currentCell = returnCell;
-        }
         return returnCell;
     }
 

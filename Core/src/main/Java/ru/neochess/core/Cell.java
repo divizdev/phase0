@@ -14,6 +14,11 @@ public class Cell {
             LeftUp,
             RightUp;
 
+    public Cell()
+    {
+
+    }
+
     public Cell(Figure figure, Cell left, Cell right, Cell up, Cell down, Cell leftDown, Cell rightDown, Cell leftUp, Cell rightUp) {
         this.figure = figure;
         Left = left;
@@ -24,6 +29,11 @@ public class Cell {
         RightDown = rightDown;
         LeftUp = leftUp;
         RightUp = rightUp;
+    }
+
+    public IteratorCell getIterator(AdjacentCell adjacentCell)
+    {
+        return new IteratorCell(this, adjacentCell);
     }
 
     /**
@@ -105,5 +115,41 @@ public class Cell {
      */
     public Cell getRightUp() {
         return RightUp;
+    }
+
+    public void setFigure(Figure figure) {
+        this.figure = figure;
+    }
+
+    public void setLeft(Cell left) {
+        Left = left;
+    }
+
+    public void setRight(Cell right) {
+        Right = right;
+    }
+
+    public void setUp(Cell up) {
+        Up = up;
+    }
+
+    public void setDown(Cell down) {
+        Down = down;
+    }
+
+    public void setLeftDown(Cell leftDown) {
+        LeftDown = leftDown;
+    }
+
+    public void setRightDown(Cell rightDown) {
+        RightDown = rightDown;
+    }
+
+    public void setLeftUp(Cell leftUp) {
+        LeftUp = leftUp;
+    }
+
+    public void setRightUp(Cell rightUp) {
+        RightUp = rightUp;
     }
 }

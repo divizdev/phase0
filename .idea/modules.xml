@@ -2,15 +2,15 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Client/Client.iml" filepath="$PROJECT_DIR$/.idea/modules/Client/Client.iml" group="Client" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Client/Client_main.iml" filepath="$PROJECT_DIR$/.idea/modules/Client/Client_main.iml" group="Client" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Client/Client_test.iml" filepath="$PROJECT_DIR$/.idea/modules/Client/Client_test.iml" group="Client" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Core/Core.iml" filepath="$PROJECT_DIR$/.idea/modules/Core/Core.iml" group="Core" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Core/Core_main.iml" filepath="$PROJECT_DIR$/.idea/modules/Core/Core_main.iml" group="Core" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Core/Core_test.iml" filepath="$PROJECT_DIR$/.idea/modules/Core/Core_test.iml" group="Core" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/neochess.phase0.client.iml" filepath="$PROJECT_DIR$/.idea/modules/neochess.phase0.client.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/neochess.phase0.client_main.iml" filepath="$PROJECT_DIR$/.idea/modules/neochess.phase0.client_main.iml" group="neochess.phase0.client" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/neochess.phase0.client_test.iml" filepath="$PROJECT_DIR$/.idea/modules/neochess.phase0.client_test.iml" group="neochess.phase0.client" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/neochess.phase0.server.iml" filepath="$PROJECT_DIR$/.idea/modules/neochess.phase0.server.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/neochess.phase0.server_main.iml" filepath="$PROJECT_DIR$/.idea/modules/neochess.phase0.server_main.iml" group="neochess.phase0.server" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/neochess.phase0.server_test.iml" filepath="$PROJECT_DIR$/.idea/modules/neochess.phase0.server_test.iml" group="neochess.phase0.server" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Server/Server.iml" filepath="$PROJECT_DIR$/.idea/modules/Server/Server.iml" group="Server" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Server/Server_main.iml" filepath="$PROJECT_DIR$/.idea/modules/Server/Server_main.iml" group="Server" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Server/Server_test.iml" filepath="$PROJECT_DIR$/.idea/modules/Server/Server_test.iml" group="Server" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/src.iml" filepath="$PROJECT_DIR$/.idea/modules/src.iml" />
     </modules>
   </component>
