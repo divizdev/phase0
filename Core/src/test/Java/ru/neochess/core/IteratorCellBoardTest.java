@@ -60,27 +60,44 @@ public void testHasNext() throws Exception {
 
     iteratorCell = core.getIterator(AdjacentCell.Left);
     Assert.assertTrue("Должен быть левый сосед", iteratorCell.hasNext());
+    iteratorCell.next();
+    Assert.assertFalse("Должен быть один левый сосед", iteratorCell.hasNext());
 
     iteratorCell = core.getIterator(AdjacentCell.Up);
     Assert.assertTrue("Должен быть верхний сосед", iteratorCell.hasNext());
+    iteratorCell.next();
+    Assert.assertFalse("Должен быть один верхний сосед", iteratorCell.hasNext());
+
 
     iteratorCell = core.getIterator(AdjacentCell.Right);
     Assert.assertTrue("Должен быть правый сосед", iteratorCell.hasNext());
+    iteratorCell.next();
+    Assert.assertFalse("Должен быть один правый сосед", iteratorCell.hasNext());
 
     iteratorCell = core.getIterator(AdjacentCell.Down);
     Assert.assertTrue("Должен быть нижний сосед", iteratorCell.hasNext());
+    iteratorCell.next();
+    Assert.assertFalse("Должен быть один нижний сосед", iteratorCell.hasNext());
 
     iteratorCell = core.getIterator(AdjacentCell.LeftUp);
     Assert.assertTrue("Должен быть сосед слева сверху", iteratorCell.hasNext());
+    iteratorCell.next();
+    Assert.assertFalse("Должен быть один слева сверху сосед", iteratorCell.hasNext());
 
     iteratorCell = core.getIterator(AdjacentCell.RightUp);
     Assert.assertTrue("Должен быть верхний сосед", iteratorCell.hasNext());
+    iteratorCell.next();
+    Assert.assertFalse("Должен быть один верхний сосед", iteratorCell.hasNext());
 
     iteratorCell = core.getIterator(AdjacentCell.RightDown);
     Assert.assertTrue("Должен быть нижний правый сосед", iteratorCell.hasNext());
+    iteratorCell.next();
+    Assert.assertFalse("Должен быть один нижний правый сосед", iteratorCell.hasNext());
 
     iteratorCell = core.getIterator(AdjacentCell.LeftDown);
     Assert.assertTrue("Должен быть левый нижний сосед", iteratorCell.hasNext());
+    iteratorCell.next();
+    Assert.assertFalse("Должен быть один левый нижний сосед", iteratorCell.hasNext());
 
 
 }
