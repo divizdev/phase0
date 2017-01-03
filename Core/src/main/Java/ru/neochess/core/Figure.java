@@ -9,12 +9,12 @@ import java.util.List;
  */
 public class Figure {
     protected ru.neochess.core.GeneratorsMove.IGeneratorMove IGeneratorMove;
-    protected Cell cell;
+    protected CellBoard cellBoard;
 
 
-    public Figure(IGeneratorMove IGeneratorMove, Cell cell) {
+    public Figure(IGeneratorMove IGeneratorMove, CellBoard cellBoard) {
         this.IGeneratorMove = IGeneratorMove;
-        this.cell = cell;
+        this.cellBoard = cellBoard;
     }
 
     public List<List<Move>> getMove()
@@ -41,20 +41,20 @@ public class Figure {
     }
 
     /**
-     * Getter for property 'cell'.
+     * Getter for property 'cellBoard'.
      *
-     * @return Value for property 'cell'.
+     * @return Value for property 'cellBoard'.
      */
-    public Cell getCell() {
-        return cell;
+    public CellBoard getCellBoard() {
+        return cellBoard;
     }
 
     /**
-     * Setter for property 'cell'.
+     * Setter for property 'cellBoard'.
      *
-     * @param cell Value to set for property 'cell'.
+     * @param cellBoard Value to set for property 'cellBoard'.
      */
-    public void setCell(Cell cell) {
-        this.cell = cell;
+    public void setCellBoard(CellBoard cellBoard) {
+        this.cellBoard = cellBoard;
     }
 }

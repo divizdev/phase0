@@ -5,14 +5,17 @@ import java.util.Iterator;
 /**
  * Created by znobischevdv on 10.12.2016.
  */
-public class IteratorCell implements Iterator<Cell> {
+public class IteratorCell implements Iterator<CellBoard> {
 
-    protected Cell currentCell;
+    protected CellBoard currentCellBoard;
     protected AdjacentCell adjacentCell;
 
-    public IteratorCell(Cell currentCell, AdjacentCell adjacentCell) {
-        this.currentCell = currentCell;
+    public IteratorCell(CellBoard currentCellBoard, AdjacentCell adjacentCell) {
+        this.currentCellBoard = currentCellBoard;
         this.adjacentCell = adjacentCell;
+
+        this.currentCellBoard = onlyNext();
+
     }
 
     /**
@@ -25,38 +28,38 @@ public class IteratorCell implements Iterator<Cell> {
     }
 
     public boolean hasNext() {
-        return currentCell != null;
+        return currentCellBoard != null;
     }
 
-    protected Cell onlyNext() {
-        if(currentCell!= null) {
+    protected CellBoard onlyNext() {
+        if(currentCellBoard != null) {
             switch (adjacentCell) {
                 case Left:
-                    return currentCell.getLeft();
+                    return currentCellBoard.getLeft();
                 case Right:
-                    return currentCell.getRight();
+                    return currentCellBoard.getRight();
                 case Up:
-                    return currentCell.getUp();
+                    return currentCellBoard.getUp();
                 case Down:
-                    return currentCell.getDown();
+                    return currentCellBoard.getDown();
                 case LeftDown:
-                    return currentCell.getLeftDown();
+                    return currentCellBoard.getLeftDown();
                 case RightDown:
-                    return currentCell.getRightDown();
+                    return currentCellBoard.getRightDown();
                 case LeftUp:
-                    return currentCell.getLeftUp();
+                    return currentCellBoard.getLeftUp();
                 case RightUp:
-                    return currentCell.getRightUp();
+                    return currentCellBoard.getRightUp();
             }
         }
 
         return null;
     }
 
-    public Cell next() {
-        Cell returnCell = currentCell;
-        currentCell = onlyNext();
-        return returnCell;
+    public CellBoard next() {
+        CellBoard returnCellBoard = currentCellBoard;
+        currentCellBoard = onlyNext();
+        return returnCellBoard;
     }
 
     public void remove() {
