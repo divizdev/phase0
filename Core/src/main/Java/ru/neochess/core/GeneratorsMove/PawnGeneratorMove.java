@@ -1,7 +1,9 @@
 package ru.neochess.core.GeneratorsMove;
 
+import ru.neochess.core.CellBoard;
 import ru.neochess.core.Move;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -10,7 +12,7 @@ import java.util.List;
 public class PawnGeneratorMove implements  IGeneratorMove {
 
 
-    public List<List<Move>> getMove() {
+    public ArrayList<ArrayList<Move>> getMove(CellBoard currentCell) {
         return null;
     }
 }

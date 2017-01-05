@@ -7,11 +7,6 @@ public class CellBoard {
 
 
     protected Figure figure;
-
-    public Cell getCell() {
-        return cell;
-    }
-
     protected Cell cell;
     //
 //    public void setName(String name) {
@@ -25,11 +20,10 @@ public class CellBoard {
             rightDown,
             leftUp,
             rightUp;
-
-
     CellBoard(int x, int y) {
         cell = new Cell(x, y);
     }
+
 
     public CellBoard(int x, int y, Figure figure, CellBoard left, CellBoard right, CellBoard up, CellBoard down, CellBoard leftDown, CellBoard rightDown, CellBoard leftUp, CellBoard rightUp) {
         this.figure = figure;
@@ -43,6 +37,10 @@ public class CellBoard {
         this.rightUp = rightUp;
         cell = new Cell(x, y);
 
+    }
+
+    public Cell getCell() {
+        return cell;
     }
 
     @Override
@@ -63,8 +61,14 @@ public class CellBoard {
         return figure;
     }
 
+    /**
+     * Устанавливаем в клетку фигуру,
+     * У фигуры так же меняется ссылка на клетку
+     * @param figure - фигура
+     */
     public void setFigure(Figure figure) {
         this.figure = figure;
+        this.figure.setCellBoard(this);
     }
 
     /**

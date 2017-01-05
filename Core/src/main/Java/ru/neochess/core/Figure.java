@@ -2,42 +2,47 @@ package ru.neochess.core;
 
 import ru.neochess.core.GeneratorsMove.IGeneratorMove;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by znobischevdv on 10.12.2016.
  */
 public class Figure {
-    protected ru.neochess.core.GeneratorsMove.IGeneratorMove IGeneratorMove;
+    protected ArrayList<IGeneratorMove> listGeneratorMove;
     protected CellBoard cellBoard;
 
 
-    public Figure(IGeneratorMove IGeneratorMove, CellBoard cellBoard) {
-        this.IGeneratorMove = IGeneratorMove;
+    public Figure(IGeneratorMove generatorMove, CellBoard cellBoard) {
+        this.listGeneratorMove.add(generatorMove);
         this.cellBoard = cellBoard;
     }
 
-    public List<List<Move>> getMove()
+    public ArrayList<ArrayList<Move>> getMove()
     {
-        return IGeneratorMove.getMove();
+        ArrayList<ArrayList<Move>> list = new ArrayList<>();
+        for (IGeneratorMove generatorMove : listGeneratorMove) {
+            list.addAll(generatorMove.getMove(getCellBoard()));
+        }
+        return list;
     }
 
     /**
-     * Getter for property 'IGeneratorMove'.
+     * Getter for property 'listGeneratorMove'.
      *
-     * @return Value for property 'IGeneratorMove'.
+     * @return Value for property 'listGeneratorMove'.
      */
-    public IGeneratorMove getIGeneratorMove() {
-        return IGeneratorMove;
+    public ArrayList<IGeneratorMove> getListGeneratorMove() {
+        return listGeneratorMove;
     }
 
     /**
-     * Setter for property 'IGeneratorMove'.
+     * Setter for property 'listGeneratorMove'.
      *
-     * @param IGeneratorMove Value to set for property 'IGeneratorMove'.
+     * @param listGeneratorMove Value to set for property 'listGeneratorMove'.
      */
-    public void setIGeneratorMove(IGeneratorMove IGeneratorMove) {
-        this.IGeneratorMove = IGeneratorMove;
+    public void setListGeneratorMove(ArrayList<IGeneratorMove> listGeneratorMove) {
+        this.listGeneratorMove = listGeneratorMove;
     }
 
     /**
