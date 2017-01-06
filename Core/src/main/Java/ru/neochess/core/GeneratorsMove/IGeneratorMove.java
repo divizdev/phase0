@@ -11,5 +11,5 @@ import java.util.List;
  * Created by znobischevdv on 10.12.2016.
  */
 public interface IGeneratorMove {
-     ArrayList<ArrayList<Move>> getMove(CellBoard currentCell);
+     ArrayList<Move> getMove(CellBoard currentCell);
 }

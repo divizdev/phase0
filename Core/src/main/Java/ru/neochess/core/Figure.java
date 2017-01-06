@@ -18,9 +18,9 @@ public class Figure {
         this.cellBoard = cellBoard;
     }
 
-    public ArrayList<ArrayList<Move>> getMove()
+    public ArrayList<Move> getMove()
     {
-        ArrayList<ArrayList<Move>> list = new ArrayList<>();
+        ArrayList<Move> list = new ArrayList<>();
         for (IGeneratorMove generatorMove : listGeneratorMove) {
             list.addAll(generatorMove.getMove(getCellBoard()));
         }

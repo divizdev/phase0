@@ -20,7 +20,7 @@ public class CellBoard {
             rightDown,
             leftUp,
             rightUp;
-    CellBoard(int x, int y) {
+    public CellBoard(int x, int y) {
         cell = new Cell(x, y);
     }
 
