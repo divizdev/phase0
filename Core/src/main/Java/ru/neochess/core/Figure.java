@@ -6,10 +6,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by znobischevdv on 10.12.2016.
+ * Фигура на игровом поле
+ * Created by diviz on 10.12.2016.
  */
 public class Figure {
-    protected ArrayList<IGeneratorMove> listGeneratorMove;
+    protected ArrayList<IGeneratorMove> listGeneratorMove = new ArrayList<>();
     protected CellBoard cellBoard;
 
 
