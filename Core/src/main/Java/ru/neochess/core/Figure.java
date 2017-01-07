@@ -12,15 +12,25 @@ import java.util.List;
 public class Figure {
     protected ArrayList<IGeneratorMove> listGeneratorMove = new ArrayList<>();
     protected CellBoard cellBoard;
+    protected TypeGamer typeGamer;
 
 
-    public Figure(IGeneratorMove generatorMove, CellBoard cellBoard) {
-        this.listGeneratorMove.add(generatorMove);
+    public Figure(ArrayList<IGeneratorMove> generatorMove, CellBoard cellBoard, TypeGamer typeGamer) {
+        this.listGeneratorMove = generatorMove;
         this.cellBoard = cellBoard;
+        this.typeGamer = typeGamer;
+
     }
 
-    public ArrayList<Move> getMove()
-    {
+    public TypeGamer getTypeGamer() {
+        return typeGamer;
+    }
+
+    public void setTypeGamer(TypeGamer typeGamer) {
+        this.typeGamer = typeGamer;
+    }
+
+    public ArrayList<Move> getMove() {
         ArrayList<Move> list = new ArrayList<>();
         for (IGeneratorMove generatorMove : listGeneratorMove) {
             list.addAll(generatorMove.getMove(getCellBoard()));
