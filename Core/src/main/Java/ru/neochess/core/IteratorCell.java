@@ -31,7 +31,7 @@ public class IteratorCell implements Iterator<CellBoard> {
         return currentCellBoard != null;
     }
 
-    protected CellBoard onlyNext() {
+     private CellBoard onlyNext() {
         if(currentCellBoard != null) {
             switch (adjacentCell) {
                 case Left:

@@ -22,6 +22,10 @@ public class Figure {
 
     }
 
+    public Figure(TypeGamer typeGamer) {
+        this(null, null, typeGamer);
+    }
+
     public TypeGamer getTypeGamer() {
         return typeGamer;
     }

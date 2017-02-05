@@ -1,18 +1,19 @@
 package ru.neochess.core;
 
 /**
+ * Клетка доски. Содержит ссылки на соседние клеткки и на фигуру.
+ * Управляет размещением фигуры.
  * Created by diviz on 10.12.2016.
  */
 public class CellBoard {
 
 
     protected Figure figure;
-    protected Cell cell;
-    //
-//    public void setName(String name) {
-//        this.name = name;
-//    }
-    protected CellBoard left,
+    private Cell cell;
+
+
+
+    private CellBoard left,
             right,
             up,
             down,
@@ -20,13 +21,26 @@ public class CellBoard {
             rightDown,
             leftUp,
             rightUp;
+
     public CellBoard(int x, int y) {
-        cell = new Cell(x, y);
+        this(x, y, null, null, null, null, null, null, null, null, null);
+    }
+
+    public CellBoard(int x, int y, Figure figure) {
+        this(x, y, figure, null, null, null, null, null, null, null, null);
+    }
+
+    public CellBoard(int x, int y, CellBoard left, CellBoard right, CellBoard up, CellBoard down, CellBoard leftDown, CellBoard rightDown, CellBoard leftUp, CellBoard rightUp) {
+        this(x, y, null, left, right, up, down, leftDown, rightDown, leftUp, rightUp);
+
     }
 
 
     public CellBoard(int x, int y, Figure figure, CellBoard left, CellBoard right, CellBoard up, CellBoard down, CellBoard leftDown, CellBoard rightDown, CellBoard leftUp, CellBoard rightUp) {
         this.figure = figure;
+        if (this.figure != null) {
+            this.figure.setCellBoard(this);
+        }
         this.left = left;
         this.right = right;
         this.up = up;
@@ -64,6 +78,7 @@ public class CellBoard {
     /**
      * Устанавливаем в клетку фигуру,
      * У фигуры так же меняется ссылка на клетку
+     *
      * @param figure - фигура
      */
     public void setFigure(Figure figure) {

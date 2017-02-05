@@ -6,9 +6,9 @@ package ru.neochess.core;
 public class Cell {
 
     public static final int length = 9;
-    protected int x, y;
-    protected String[] convertX= {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j"};
-    protected String[] convertY= {"10", "9", "8", "7", "6", "5", "4", "3", "2", "1" };
+    private int x, y;
+    private String[] convertX= {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j"};
+    private String[] convertY= {"10", "9", "8", "7", "6", "5", "4", "3", "2", "1" };
 
     public Cell(int x, int y) {
         this.x = x;

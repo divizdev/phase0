@@ -6,10 +6,6 @@
       <module name="Client_test" target="1.8" />
       <module name="Core_main" target="1.8" />
       <module name="Core_test" target="1.8" />
-      <module name="neochess.phase0.client_main" target="1.8" />
-      <module name="neochess.phase0.client_test" target="1.8" />
-      <module name="neochess.phase0.server_main" target="1.8" />
-      <module name="neochess.phase0.server_test" target="1.8" />
       <module name="Server_main" target="1.8" />
       <module name="Server_test" target="1.8" />
     </bytecodeTargetLevel>

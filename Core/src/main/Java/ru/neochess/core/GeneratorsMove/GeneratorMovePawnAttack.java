@@ -2,10 +2,10 @@ package ru.neochess.core.GeneratorsMove;
 
 import ru.neochess.core.AdjacentCell;
 import ru.neochess.core.CellBoard;
-import ru.neochess.core.IteratorCell;
 import ru.neochess.core.Move;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 /**
  * Генерация аттаки пешки
@@ -19,11 +19,10 @@ public class GeneratorMovePawnAttack implements IGeneratorMove {
         CellBoard next;
         Move move;
 
-        IteratorCell leftUp = currentCell.getIterator(AdjacentCell.LeftUp);
-        IteratorCell rightUp = currentCell.getIterator(AdjacentCell.RightUp);
+        Iterator<CellBoard> leftUp = currentCell.getIterator(AdjacentCell.LeftUp);
+        Iterator<CellBoard> rightUp = currentCell.getIterator(AdjacentCell.RightUp);
 
-        if (leftUp.hasNext())
-        {
+        if (leftUp.hasNext()) {
             next = leftUp.next();
             move = createMove(currentCell, next);
             if (move != null) {
@@ -31,8 +30,7 @@ public class GeneratorMovePawnAttack implements IGeneratorMove {
             }
         }
 
-        if(rightUp.hasNext())
-        {
+        if (rightUp.hasNext()) {
             next = leftUp.next();
             move = createMove(currentCell, next);
             if (move != null) {
@@ -45,9 +43,8 @@ public class GeneratorMovePawnAttack implements IGeneratorMove {
 
     protected Move createMove(CellBoard currentCell, CellBoard next) {
 
-        if (next.getFigure() != null)
-        {
-            return(new Move(currentCell.getCell(), next.getCell(), currentCell.getFigure(), false));
+        if (next.getFigure() != null) {
+            return (new Move(currentCell.getCell(), next.getCell(), currentCell.getFigure(), false));
         }
 
         return null;
