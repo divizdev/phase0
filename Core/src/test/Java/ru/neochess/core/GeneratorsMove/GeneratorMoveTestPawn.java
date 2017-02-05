@@ -7,6 +7,7 @@ import ru.neochess.core.Move;
 import ru.neochess.core.TypeGamer;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
@@ -62,7 +63,7 @@ public class GeneratorMoveTestPawn {
 
         IGeneratorMove generationMove = new GeneratorMovePawn();
 
-        ArrayList<Move> moves = generationMove.getMove(currCell);
+        List<Move> moves = generationMove.getMove(currCell);
 
         assertNotNull("Список ходов не должен быть пустым", moves);
 

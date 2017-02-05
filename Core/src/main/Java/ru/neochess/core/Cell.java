@@ -21,7 +21,7 @@ public class Cell {
     public String toString()
     {
         if (x > length || y > length || x < 0 || y < 0){
-            return null;
+            return "";
         }
         return convertX[x] + convertY[y];
     }

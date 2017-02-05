@@ -66,9 +66,7 @@ public class UtiliteChess {
         _properties.setProperty("Port", "5000");
         _properties.setProperty("Host", "neochess.divizdev.ru");
         _properties.setProperty("Initial", _initialBoard);
-        OutputStream output;
-        try {
-            output = new FileOutputStream("config.properties");
+        try (OutputStream output = new FileOutputStream("config.properties")) {
             _properties.store(output, null);
             output.close();
         } catch (FileNotFoundException e) {

@@ -35,7 +35,7 @@ public class CellTest {
         int x = Cell.length + 1;
         Cell cell = new Cell(x,Cell.length);
 
-        assertNull(cell.toString());
+        assertEquals("", cell.toString());
     }
 
     @Test
@@ -43,7 +43,7 @@ public class CellTest {
         int y = Cell.length + 1;
         Cell cell = new Cell(Cell.length, y);
 
-        assertNull(cell.toString());
+        assertEquals("", cell.toString());
     }
 
 

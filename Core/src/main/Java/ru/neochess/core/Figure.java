@@ -10,9 +10,9 @@ import java.util.List;
  * Created by diviz on 10.12.2016.
  */
 public class Figure {
-    protected ArrayList<IGeneratorMove> listGeneratorMove = new ArrayList<>();
-    protected CellBoard cellBoard;
-    protected TypeGamer typeGamer;
+    List<IGeneratorMove> listGeneratorMove = new ArrayList<>();
+    CellBoard cellBoard;
+    TypeGamer typeGamer;
 
 
     public Figure(ArrayList<IGeneratorMove> generatorMove, CellBoard cellBoard, TypeGamer typeGamer) {
@@ -47,7 +47,7 @@ public class Figure {
      *
      * @return Value for property 'listGeneratorMove'.
      */
-    public ArrayList<IGeneratorMove> getListGeneratorMove() {
+    public List<IGeneratorMove> getListGeneratorMove() {
         return listGeneratorMove;
     }
 

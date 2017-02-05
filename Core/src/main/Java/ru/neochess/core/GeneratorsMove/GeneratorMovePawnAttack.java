@@ -6,6 +6,7 @@ import ru.neochess.core.Move;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 
 /**
  * Генерация аттаки пешки
@@ -14,8 +15,8 @@ import java.util.Iterator;
 public class GeneratorMovePawnAttack implements IGeneratorMove {
 
     @Override
-    public ArrayList<Move> getMove(CellBoard currentCell) {
-        ArrayList<Move> result = new ArrayList<>();
+    public List<Move> getMove(CellBoard currentCell) {
+        List<Move> result = new ArrayList<>();
         CellBoard next;
         Move move;
 
