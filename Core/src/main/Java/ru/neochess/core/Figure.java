@@ -10,9 +10,9 @@ import java.util.List;
  * Created by diviz on 10.12.2016.
  */
 public class Figure {
-    List<IGeneratorMove> listGeneratorMove = new ArrayList<>();
-    CellBoard cellBoard;
-    TypeGamer typeGamer;
+    private List<IGeneratorMove> listGeneratorMove = new ArrayList<>();
+    private CellBoard cellBoard;
+    private TypeGamer typeGamer;
 
 
     public Figure(ArrayList<IGeneratorMove> generatorMove, CellBoard cellBoard, TypeGamer typeGamer) {

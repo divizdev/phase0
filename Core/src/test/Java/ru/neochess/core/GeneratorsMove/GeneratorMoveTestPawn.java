@@ -31,10 +31,10 @@ public class GeneratorMoveTestPawn {
         leftUp = new CellBoard(0, 0, leftUpFigure);
         up = new CellBoard(0, 1, upFigure);
         rightUp = new CellBoard(0, 2, rightUpFigure);
-        center = new CellBoard(1, 1, centerFigure);
-        center.setLeftUp(leftUp);
-        center.setUp(up);
-        center.setRightUp(rightUp);
+        center = new CellBoard(1, 1, centerFigure, null, null, up,
+                                                        null, null, null,
+                                                                leftUp, rightUp );
+
 
         return center;
     }

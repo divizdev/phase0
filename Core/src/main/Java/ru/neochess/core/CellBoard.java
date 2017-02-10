@@ -2,21 +2,18 @@ package ru.neochess.core;
 
 /**
  * Клетка доски. Содержит ссылки на соседние клеткки и на фигуру.
- * Управляет размещением фигуры.
  * Created by diviz on 10.12.2016.
  */
 public class CellBoard {
 
 
-    protected Figure figure;
-    private Cell cell;
-
-
-
-    private CellBoard left,
+    private Figure figure;
+    private final Cell cell;
+    private final CellBoard left,
             right,
             up,
             down,
+
             leftDown,
             rightDown,
             leftUp,
@@ -38,9 +35,6 @@ public class CellBoard {
 
     public CellBoard(int x, int y, Figure figure, CellBoard left, CellBoard right, CellBoard up, CellBoard down, CellBoard leftDown, CellBoard rightDown, CellBoard leftUp, CellBoard rightUp) {
         this.figure = figure;
-        if (this.figure != null) {
-            this.figure.setCellBoard(this);
-        }
         this.left = left;
         this.right = right;
         this.up = up;
@@ -77,13 +71,11 @@ public class CellBoard {
 
     /**
      * Устанавливаем в клетку фигуру,
-     * У фигуры так же меняется ссылка на клетку
      *
      * @param figure - фигура
      */
     public void setFigure(Figure figure) {
         this.figure = figure;
-        this.figure.setCellBoard(this);
     }
 
     /**
@@ -95,9 +87,7 @@ public class CellBoard {
         return left;
     }
 
-    public void setLeft(CellBoard left) {
-        this.left = left;
-    }
+
 
     /**
      * Getter for property 'right'.
@@ -108,9 +98,7 @@ public class CellBoard {
         return right;
     }
 
-    public void setRight(CellBoard right) {
-        this.right = right;
-    }
+
 
     /**
      * Getter for property 'up'.
@@ -121,9 +109,7 @@ public class CellBoard {
         return up;
     }
 
-    public void setUp(CellBoard up) {
-        this.up = up;
-    }
+
 
     /**
      * Getter for property 'down'.
@@ -134,9 +120,6 @@ public class CellBoard {
         return down;
     }
 
-    public void setDown(CellBoard down) {
-        this.down = down;
-    }
 
     /**
      * Getter for property 'leftDown'.
@@ -147,9 +130,7 @@ public class CellBoard {
         return leftDown;
     }
 
-    public void setLeftDown(CellBoard leftDown) {
-        this.leftDown = leftDown;
-    }
+
 
     /**
      * Getter for property 'rightDown'.
@@ -158,10 +139,6 @@ public class CellBoard {
      */
     public CellBoard getRightDown() {
         return rightDown;
-    }
-
-    public void setRightDown(CellBoard rightDown) {
-        this.rightDown = rightDown;
     }
 
     /**
@@ -173,9 +150,7 @@ public class CellBoard {
         return leftUp;
     }
 
-    public void setLeftUp(CellBoard leftUp) {
-        this.leftUp = leftUp;
-    }
+
 
     /**
      * Getter for property 'rightUp'.
@@ -186,7 +161,5 @@ public class CellBoard {
         return rightUp;
     }
 
-    public void setRightUp(CellBoard rightUp) {
-        this.rightUp = rightUp;
-    }
+
 }

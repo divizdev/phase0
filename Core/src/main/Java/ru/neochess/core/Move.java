@@ -6,9 +6,9 @@ package ru.neochess.core;
  */
 public class Move {
 
-    protected Cell from, to;
-    protected Figure figure;
-    protected boolean isCheck;
+    private Cell from, to;
+    private Figure figure;
+    private boolean isCheck;
 
 
     public Move(Cell from, Cell to, Figure figure, boolean isCheck) {
@@ -17,6 +17,7 @@ public class Move {
         this.figure = figure;
         this.isCheck = isCheck;
     }
+
 
     public Cell getFrom() {
         return from;
