@@ -3,6 +3,7 @@ package ru.neochess.core.GeneratorsMove;
 import ru.neochess.core.AdjacentCell;
 import ru.neochess.core.CellBoard;
 import ru.neochess.core.Move;
+import ru.neochess.core.TypeGamer;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -15,7 +16,8 @@ import java.util.List;
 public class GeneratorMovePawn implements IGeneratorMove {
 
 
-    public List<Move> getMove(CellBoard currentCell) {
+    @Override
+    public List<Move> getMove(CellBoard currentCell, TypeGamer typeGamer) {
         List<Move> result = new ArrayList<>();
 
         Iterator<CellBoard> iterator = currentCell.getIterator(AdjacentCell.Up);
@@ -23,10 +25,12 @@ public class GeneratorMovePawn implements IGeneratorMove {
         if (iterator.hasNext()) {
             CellBoard next = iterator.next();
             if (next.getFigure() == null) {
-                result.add(new Move(currentCell.getCell(), next.getCell(),
+                result.add(new Move(currentCell, next,
                         currentCell.getFigure(), false));
             }
         }
         return result;
     }
+
+
 }

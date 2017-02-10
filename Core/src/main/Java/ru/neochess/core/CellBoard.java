@@ -13,7 +13,6 @@ public class CellBoard {
             right,
             up,
             down,
-
             leftDown,
             rightDown,
             leftUp,
@@ -59,6 +58,8 @@ public class CellBoard {
     public IteratorCell getIterator(AdjacentCell adjacentCell) {
         return new IteratorCell(this, adjacentCell);
     }
+
+
 
     /**
      * Getter for property 'figure'.

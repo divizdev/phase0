@@ -11,14 +11,13 @@ public class CellBoardTest {
     @Test
     public void setFigure() throws Exception {
 
-        Figure figure = new Figure(null, null, TypeGamer.White);
+        Figure figure = new Figure(null,  TypeGamer.White);
         CellBoard cellA = new CellBoard(0, 0);
 
         cellA.setFigure(figure);
 
         assertEquals(figure, cellA.getFigure());
 
-        assertNull(figure.getCellBoard());
 
     }
 

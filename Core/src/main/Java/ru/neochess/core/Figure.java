@@ -11,19 +11,17 @@ import java.util.List;
  */
 public class Figure {
     private List<IGeneratorMove> listGeneratorMove = new ArrayList<>();
-    private CellBoard cellBoard;
     private TypeGamer typeGamer;
 
 
-    public Figure(ArrayList<IGeneratorMove> generatorMove, CellBoard cellBoard, TypeGamer typeGamer) {
+    public Figure(ArrayList<IGeneratorMove> generatorMove, TypeGamer typeGamer) {
         this.listGeneratorMove = generatorMove;
-        this.cellBoard = cellBoard;
         this.typeGamer = typeGamer;
 
     }
 
     public Figure(TypeGamer typeGamer) {
-        this(null, null, typeGamer);
+        this(null, typeGamer);
     }
 
     public TypeGamer getTypeGamer() {
@@ -34,10 +32,10 @@ public class Figure {
         this.typeGamer = typeGamer;
     }
 
-    public ArrayList<Move> getMove() {
+    public ArrayList<Move> getMove(CellBoard cellBoard) {
         ArrayList<Move> list = new ArrayList<>();
         for (IGeneratorMove generatorMove : listGeneratorMove) {
-            list.addAll(generatorMove.getMove(getCellBoard()));
+            list.addAll(generatorMove.getMove(cellBoard, typeGamer));
         }
         return list;
     }
@@ -60,21 +58,5 @@ public class Figure {
         this.listGeneratorMove = listGeneratorMove;
     }
 
-    /**
-     * Getter for property 'cellBoard'.
-     *
-     * @return Value for property 'cellBoard'.
-     */
-    public CellBoard getCellBoard() {
-        return cellBoard;
-    }
 
-    /**
-     * Setter for property 'cellBoard'.
-     *
-     * @param cellBoard Value to set for property 'cellBoard'.
-     */
-    public void setCellBoard(CellBoard cellBoard) {
-        this.cellBoard = cellBoard;
-    }
 }

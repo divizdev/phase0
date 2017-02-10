@@ -44,7 +44,7 @@ public class GeneratorMoveTestPawn {
         CellBoard currCell = getCellEndLine();
         IGeneratorMove generation = new GeneratorMovePawn();
 
-        assertTrue("В стену ходить нельзя", generation.getMove(currCell).isEmpty());
+        assertTrue("В стену ходить нельзя", generation.getMove(currCell, TypeGamer.White).isEmpty());
     }
 
 
@@ -53,7 +53,7 @@ public class GeneratorMoveTestPawn {
         CellBoard currCell = getCellEndLine();
         IGeneratorMove generation = new GeneratorMovePawn();
 
-        assertTrue("В стену бить нельзя", generation.getMove(currCell).isEmpty());
+        assertTrue("В стену бить нельзя", generation.getMove(currCell, TypeGamer.White).isEmpty());
     }
 
     @Test
@@ -63,7 +63,7 @@ public class GeneratorMoveTestPawn {
 
         IGeneratorMove generationMove = new GeneratorMovePawn();
 
-        List<Move> moves = generationMove.getMove(currCell);
+        List<Move> moves = generationMove.getMove(currCell, TypeGamer.White);
 
         assertNotNull("Список ходов не должен быть пустым", moves);
 
