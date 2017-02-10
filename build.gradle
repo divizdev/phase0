@@ -1,0 +1,40 @@
+
+allprojects {
+
+    version = "0.1"
+
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
+        maven { url "https://oss.sonatype.org/content/repositories/releases/" }
+    }
+}
+
+project ("Client"){
+    apply plugin: "java"
+    dependencies {
+        compile project(":Core")
+    }
+}
+
+
+project (":Core"){
+    apply plugin: "java"
+
+    dependencies {
+        testCompile "junit:junit:4.12"
+
+    }
+
+}
+
+
+project ("Server") {
+    apply plugin: "java"
+
+    dependencies {
+        compile project(":Core")
+    }
+
+}
