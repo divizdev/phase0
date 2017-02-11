@@ -2,7 +2,7 @@ package ru.neochess.core.GeneratorsMove;
 
 import ru.neochess.core.AdjacentCell;
 import ru.neochess.core.CellBoard;
-import ru.neochess.core.Move;
+import ru.neochess.core.Move.Move;
 import ru.neochess.core.TypeGamer;
 
 import java.util.ArrayList;
@@ -46,7 +46,7 @@ public class GeneratorMovePawnAttack implements IGeneratorMove {
     protected Move createMove(CellBoard currentCell, CellBoard next) {
 
         if (next.getFigure() != null) {
-            return (new Move(currentCell, next, currentCell.getFigure(), false));
+            return (new Move(currentCell, next, currentCell.getFigure()));
         }
 
         return null;

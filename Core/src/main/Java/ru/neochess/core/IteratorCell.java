@@ -7,8 +7,8 @@ import java.util.Iterator;
  */
 public class IteratorCell implements Iterator<CellBoard> {
 
-    protected CellBoard currentCellBoard;
-    protected AdjacentCell adjacentCell;
+    private CellBoard currentCellBoard;
+    private AdjacentCell adjacentCell;
 
     public IteratorCell(CellBoard currentCellBoard, AdjacentCell adjacentCell) {
         this.currentCellBoard = currentCellBoard;

@@ -1,50 +1,68 @@
-package ru.neochess.core;
+package ru.neochess.core.Move;
+
+import ru.neochess.core.CellBoard;
+import ru.neochess.core.Figure;
 
 /**
  * Содержит клетки хода, фигуру хода, а так же дополнительные флаги
  * Created by diviz on 10.12.2016.
  */
-public class Move {
+public class Move implements IMove {
 
     private final CellBoard from, to;
-    private final Figure oldFigure;
+    private final Figure oldFigureFrom;
+    private final Figure oldFigureTo;
     private final Figure figure;
-    private final boolean isCheck;
 
 
-    public Move(CellBoard from, CellBoard to, Figure figure, boolean isCheck) {
+    public Move(CellBoard from, CellBoard to, Figure figure) {
         this.from = from;
         this.to = to;
         this.figure = figure;
-        this.isCheck = isCheck;
-        oldFigure = from.getFigure();
+        oldFigureTo = to.getFigure();
+        oldFigureFrom = from.getFigure();
     }
 
+    @Override
     public void make() {
         from.setFigure(null);
         to.setFigure(figure);
     }
 
+    @Override
     public void cancel() {
-        from.setFigure(oldFigure);
-        to.setFigure(null);
+        to.setFigure(oldFigureTo);
+        from.setFigure(oldFigureFrom);
     }
 
 
+    @Override
     public CellBoard getFrom() {
         return from;
     }
 
+    @Override
     public CellBoard getTo() {
         return to;
     }
 
+    @Override
     public Figure getFigure() {
         return figure;
     }
 
-    public boolean isCheck() {
-        return isCheck;
+    //TODO: Нарушаем принципы чистого кода. Вынести в отдельный интерфейс стратегию
+    @Override
+    public Boolean isCharacteristicsMove(CharacteristicsMove characteristicsMove){
+        switch (characteristicsMove) {
+            case CheckElephant:
+                break;
+            case CheckKing:
+                break;
+            default:
+                return false;
+        }
+        return false;
     }
 
     @Override
@@ -53,11 +71,9 @@ public class Move {
         if (o == null || getClass() != o.getClass()) return false;
 
         Move move = (Move) o;
-
-        if (isCheck() != move.isCheck()) return false;
         if (getFrom() != null ? !getFrom().equals(move.getFrom()) : move.getFrom() != null) return false;
         if (getTo() != null ? !getTo().equals(move.getTo()) : move.getTo() != null) return false;
-        if (oldFigure != null ? !oldFigure.equals(move.oldFigure) : move.oldFigure != null) return false;
+        if (oldFigureFrom != null ? !oldFigureFrom.equals(move.oldFigureFrom) : move.oldFigureFrom != null) return false;
         return getFigure() != null ? getFigure().equals(move.getFigure()) : move.getFigure() == null;
     }
 
@@ -65,9 +81,9 @@ public class Move {
     public int hashCode() {
         int result = getFrom() != null ? getFrom().hashCode() : 0;
         result = 31 * result + (getTo() != null ? getTo().hashCode() : 0);
-        result = 31 * result + (oldFigure != null ? oldFigure.hashCode() : 0);
+        result = 31 * result + (oldFigureFrom != null ? oldFigureFrom.hashCode() : 0);
         result = 31 * result + (getFigure() != null ? getFigure().hashCode() : 0);
-        result = 31 * result + (isCheck() ? 1 : 0);
+
         return result;
     }
 

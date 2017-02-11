@@ -1,7 +1,7 @@
 package ru.neochess.core.GeneratorsMove;
 
 import ru.neochess.core.CellBoard;
-import ru.neochess.core.Move;
+import ru.neochess.core.Move.Move;
 import ru.neochess.core.TypeGamer;
 
 import java.util.List;

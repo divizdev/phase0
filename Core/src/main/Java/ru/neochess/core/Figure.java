@@ -1,6 +1,7 @@
 package ru.neochess.core;
 
 import ru.neochess.core.GeneratorsMove.IGeneratorMove;
+import ru.neochess.core.Move.Move;
 
 import java.util.ArrayList;
 import java.util.List;

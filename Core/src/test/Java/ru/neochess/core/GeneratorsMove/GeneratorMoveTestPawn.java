@@ -3,10 +3,9 @@ package ru.neochess.core.GeneratorsMove;
 import org.junit.Test;
 import ru.neochess.core.CellBoard;
 import ru.neochess.core.Figure;
-import ru.neochess.core.Move;
+import ru.neochess.core.Move.Move;
 import ru.neochess.core.TypeGamer;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.Assert.assertNotNull;
