@@ -2,6 +2,7 @@ package ru.neochess.core.Move;
 
 import ru.neochess.core.CellBoard;
 import ru.neochess.core.Figure;
+import ru.neochess.core.TypeFigure;
 
 /**
  * Содержит клетки хода, фигуру хода, а так же дополнительные флаги
@@ -53,16 +54,19 @@ public class Move implements IMove {
 
     //TODO: Нарушаем принципы чистого кода. Вынести в отдельный интерфейс стратегию
     @Override
-    public Boolean isCharacteristicsMove(CharacteristicsMove characteristicsMove){
+    public Boolean isCharacteristicsMove(CharacteristicsMove characteristicsMove) {
+        if (oldFigureTo == null) {
+            return false;
+        }
         switch (characteristicsMove) {
             case CheckElephant:
-                break;
+                return oldFigureTo.getTypeFigure() == TypeFigure.Elephant;
             case CheckKing:
-                break;
+                return oldFigureTo.getTypeFigure() == TypeFigure.King
+                        || oldFigureTo.getTypeFigure() == TypeFigure.Leader;
             default:
                 return false;
         }
-        return false;
     }
 
     @Override
@@ -73,7 +77,8 @@ public class Move implements IMove {
         Move move = (Move) o;
         if (getFrom() != null ? !getFrom().equals(move.getFrom()) : move.getFrom() != null) return false;
         if (getTo() != null ? !getTo().equals(move.getTo()) : move.getTo() != null) return false;
-        if (oldFigureFrom != null ? !oldFigureFrom.equals(move.oldFigureFrom) : move.oldFigureFrom != null) return false;
+        if (oldFigureFrom != null ? !oldFigureFrom.equals(move.oldFigureFrom) : move.oldFigureFrom != null)
+            return false;
         return getFigure() != null ? getFigure().equals(move.getFigure()) : move.getFigure() == null;
     }
 

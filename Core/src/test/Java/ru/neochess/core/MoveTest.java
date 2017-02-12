@@ -5,9 +5,10 @@ import org.junit.Test;
 import ru.neochess.core.Move.IMove;
 import ru.neochess.core.Move.Move;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertNull;
+import static org.junit.Assert.*;
+import static ru.neochess.core.Move.CharacteristicsMove.CheckElephant;
+import static ru.neochess.core.Move.CharacteristicsMove.CheckKing;
+
 
 /**
  * Тестируем класс Move
@@ -79,5 +80,39 @@ public class MoveTest {
         assertNull("После отмены хода, новое поле должно очистится", to.getFigure());
         assertEquals("Фигура должна остаться в поле", figure, move.getFrom().getFigure());
     }
+
+    @Test
+    public void isCharacteristicsMoveElephant() throws  Exception {
+        Figure elephant = new Figure(TypeGamer.Black, TypeFigure.Elephant);
+        to.setFigure(elephant);
+        move = new Move(from, to, figure);
+        assertTrue("Бьем слона", move.isCharacteristicsMove(CheckElephant));
+        assertFalse("Не бьем короля", move.isCharacteristicsMove(CheckKing));
+    }
+
+    @Test
+    public void isCharacteristicsMoveKing() throws  Exception {
+        Figure king = new Figure(TypeGamer.Black, TypeFigure.King);
+        to.setFigure(king);
+        move = new Move(from, to, figure);
+        assertTrue("Бьем короля", move.isCharacteristicsMove(CheckKing));
+        assertFalse("Не бьем слона", move.isCharacteristicsMove(CheckElephant));
+
+    }
+    @Test
+    public void isCharacteristicsMoveLeader() throws  Exception {
+        Figure leader = new Figure(TypeGamer.Black, TypeFigure.Leader);
+        to.setFigure(leader);
+        move = new Move(from, to, figure);
+        assertTrue("Бьем лидера", move.isCharacteristicsMove(CheckKing));
+        assertFalse("Не бьем слона", move.isCharacteristicsMove(CheckElephant));
+    }
+    @Test
+    public void isCharacteristicsMoveNull() throws  Exception {
+        assertFalse("Бьем пустоту", move.isCharacteristicsMove(CheckKing));
+        assertFalse("Бьем пустоту", move.isCharacteristicsMove(CheckElephant));
+    }
+
+
 
 }

@@ -22,6 +22,10 @@ public class Figure {
         this.typeFigure = typeFigure;
     }
 
+    public Figure(TypeGamer typeGamer, TypeFigure typeFigure) {
+        this(null, typeGamer, typeFigure);
+    }
+
     public TypeFigure getTypeFigure() {
         return typeFigure;
     }
