@@ -11,7 +11,7 @@ public class CellBoardTest {
     @Test
     public void setFigure() throws Exception {
 
-        Figure figure = new Figure(null,  TypeGamer.White);
+        Figure figure = new Figure(TypeGamer.White);
         CellBoard cellA = new CellBoard(0, 0);
 
         cellA.setFigure(figure);

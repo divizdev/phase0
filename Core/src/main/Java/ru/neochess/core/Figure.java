@@ -13,16 +13,25 @@ import java.util.List;
 public class Figure {
     private List<IGeneratorMove> listGeneratorMove = new ArrayList<>();
     private TypeGamer typeGamer;
+    private TypeFigure typeFigure;
 
 
-    public Figure(ArrayList<IGeneratorMove> generatorMove, TypeGamer typeGamer) {
+    public Figure(ArrayList<IGeneratorMove> generatorMove, TypeGamer typeGamer, TypeFigure typeFigure) {
         this.listGeneratorMove = generatorMove;
         this.typeGamer = typeGamer;
+        this.typeFigure = typeFigure;
+    }
 
+    public TypeFigure getTypeFigure() {
+        return typeFigure;
+    }
+
+    public void setTypeFigure(TypeFigure typeFigure) {
+        this.typeFigure = typeFigure;
     }
 
     public Figure(TypeGamer typeGamer) {
-        this(null, typeGamer);
+        this(null, typeGamer, null);
     }
 
     public TypeGamer getTypeGamer() {
@@ -59,5 +68,29 @@ public class Figure {
         this.listGeneratorMove = listGeneratorMove;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
 
+        Figure figure = (Figure) o;
+
+        if (getListGeneratorMove() != null ? !getListGeneratorMove().equals(figure.getListGeneratorMove()) : figure.getListGeneratorMove() != null)
+            return false;
+        if (getTypeGamer() != figure.getTypeGamer()) return false;
+        return getTypeFigure() == figure.getTypeFigure();
+    }
+
+    @Override
+    public int hashCode() {
+        int result = getListGeneratorMove() != null ? getListGeneratorMove().hashCode() : 0;
+        result = 31 * result + (getTypeGamer() != null ? getTypeGamer().hashCode() : 0);
+        result = 31 * result + (getTypeFigure() != null ? getTypeFigure().hashCode() : 0);
+        return result;
+    }
+
+    @Override
+    public String toString() {
+        return typeFigure + ":"+ typeGamer;
+    }
 }

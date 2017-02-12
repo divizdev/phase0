@@ -37,13 +37,7 @@ public class IteratorCellBoardTest {
     public void after() throws Exception {
     }
 
-    /**
-     * Method: getAdjacentCell()
-     */
-    @Test
-    public void testGetAdjacentCell() throws Exception {
-//TODO: Test goes here... 
-    }
+
 
     /**
      * Method: hasNext()
@@ -94,18 +88,10 @@ public class IteratorCellBoardTest {
         assertTrue("Должен быть левый нижний сосед", iteratorCell.hasNext());
         iteratorCell.next();
         assertFalse("Должен быть один левый нижний сосед", iteratorCell.hasNext());
-
-
     }
 
 
-    /**
-     * Method: onlyNext()
-     */
-    @Test
-    public void testOnlyNext() throws Exception {
-//TODO: Test goes here... 
-    }
+
 
     /**
      * Method: next()

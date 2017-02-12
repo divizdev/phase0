@@ -17,6 +17,5 @@ public interface IMove {
 
     Figure getFigure();
 
-    //TODO: Нарушаем принципы чистого кода. Вынести в отдельный интерфейс стратегию
     Boolean isCharacteristicsMove(CharacteristicsMove characteristicsMove);
 }

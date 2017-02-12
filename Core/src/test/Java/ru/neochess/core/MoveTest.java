@@ -35,7 +35,7 @@ public class MoveTest {
 
     @Test
     public void makeFromAndToEquals() throws Exception {
-        Figure oldFigure = new Figure(null, TypeGamer.White);
+        Figure oldFigure = new Figure(TypeGamer.White);
         from.setFigure(oldFigure);
         move = new Move(from, from, figure);
         move.make();
@@ -45,7 +45,7 @@ public class MoveTest {
 
     @Test
     public void cancelFromAndToEquals() throws Exception {
-        Figure oldFigure = new Figure(null, TypeGamer.White);
+        Figure oldFigure = new Figure(TypeGamer.White);
         from.setFigure(oldFigure);
         move = new Move(from, from, figure);
         move.make();
@@ -64,7 +64,7 @@ public class MoveTest {
 
     @Test
     public void cancel() throws Exception {
-        Figure oldFigure = new Figure(null, TypeGamer.White);
+        Figure oldFigure = new Figure(TypeGamer.White);
         to.setFigure(oldFigure);
         move = new Move(from, to, figure);
         move.make();
