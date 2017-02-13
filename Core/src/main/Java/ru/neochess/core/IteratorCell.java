@@ -3,7 +3,7 @@ package ru.neochess.core;
 import java.util.Iterator;
 
 /**
- * Created by znobischevdv on 10.12.2016.
+ * Created by diviz on 10.12.2016.
  */
 public class IteratorCell implements Iterator<CellBoard> {
 

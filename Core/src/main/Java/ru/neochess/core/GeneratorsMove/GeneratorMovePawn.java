@@ -11,7 +11,7 @@ import java.util.List;
 
 /**
  * Ход пешки вперед
- * Created by znobischevdv on 10.12.2016.
+ * Created by diviz on 10.12.2016.
  */
 public class GeneratorMovePawn implements IGeneratorMove {
 

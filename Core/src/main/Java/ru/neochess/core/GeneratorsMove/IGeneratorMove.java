@@ -8,7 +8,7 @@ import java.util.List;
 
 /**
  * Стратегия для генерации ходов
- * Created by znobischevdv on 10.12.2016.
+ * Created by diviz on 10.12.2016.
  */
 @FunctionalInterface
 public interface IGeneratorMove {

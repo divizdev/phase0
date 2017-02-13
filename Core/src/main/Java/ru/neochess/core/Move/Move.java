@@ -5,7 +5,7 @@ import ru.neochess.core.Figure;
 import ru.neochess.core.TypeFigure;
 
 /**
- * Содержит клетки хода, фигуру хода, а так же дополнительные флаги
+ * Ход
  * Created by diviz on 10.12.2016.
  */
 public class Move implements IMove {
