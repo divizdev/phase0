@@ -15,7 +15,7 @@ public interface IMove {
 
     CellBoard getTo();
 
-    Figure getFigure();
+    Figure getFigureTo();
 
     Boolean isCharacteristicsMove(CharacteristicsMove characteristicsMove);
 }

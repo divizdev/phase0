@@ -205,7 +205,7 @@ class ChessBoard extends JPanel implements ImageObserver, MouseListener, MouseMo
                 b = !b;
                 gfx.fillRect(x, y, cellsize, cellsize);
 
-                //paintChessMan(board.getCellByIndex(i,j).getFigure(), x, y, gfx);
+                //paintChessMan(board.getCellByIndex(i,j).getFigureTo(), x, y, gfx);
                 //paintChessMan(chess_matrix[i][j], x, y, gfx);
 
                 x += cellsize;
@@ -608,10 +608,10 @@ class ChessBoard extends JPanel implements ImageObserver, MouseListener, MouseMo
                 } else {
 
 
-                        //Figure oldFigure =  board.getCellByIndex(row, col).getFigure();
+                        //Figure oldFigure =  board.getCellByIndex(row, col).getFigureTo();
                         if (!oldFigure.getRace().equals(pieceRace) || !oldFigure.getState().equals(pieceState) || !oldFigure.getCode().equals(pieceCode))
 
-                        //  Figure oldFigure = board.getCellByIndex(row, col).getFigure();
+                        //  Figure oldFigure = board.getCellByIndex(row, col).getFigureTo();
 
                         {
                             board.removeFigure(oldFigure);

@@ -113,6 +113,30 @@ public class MoveTest {
         assertFalse("Бьем пустоту", move.isCharacteristicsMove(CheckElephant));
     }
 
+    @Test
+    public void makeShot() throws Exception {
+        from.setFigure(figure);
+        to.setFigure(figure);
+        move = new Move(from, to, figure, null);
+        assertEquals("До хода поле заполенно", figure, from.getFigure());
+        move.make();
+        assertEquals("После хода поле заполенно", figure, move.getFrom().getFigure());
+        assertNull("Куда ходили осталось пусто",  move.getTo().getFigure());
+
+    }
+    @Test
+    public void cancelShot() throws Exception {
+        from.setFigure(figure);
+        to.setFigure(figure);
+        move = new Move(from, to, figure, null);
+        assertEquals("До хода поле заполенно", figure, from.getFigure());
+        move.make();
+        move.cancel();
+        assertEquals("После хода поле заполенно", figure, move.getFrom().getFigure());
+        assertEquals("Куда ходили осталось пусто",  figure, move.getTo().getFigure());
+
+    }
+
 
 
 }

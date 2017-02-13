@@ -13,21 +13,28 @@ public class Move implements IMove {
     private final CellBoard from, to;
     private final Figure oldFigureFrom;
     private final Figure oldFigureTo;
-    private final Figure figure;
+    private final Figure figureTo;
+    private final Figure figureFrom;
 
 
-    public Move(CellBoard from, CellBoard to, Figure figure) {
+    public Move(CellBoard from, CellBoard to, Figure figureTo) {
+        this(from, to, null, figureTo);
+    }
+
+    public Move(CellBoard from, CellBoard to, Figure figureFrom, Figure figureTo) {
         this.from = from;
         this.to = to;
-        this.figure = figure;
+        this.figureTo = figureTo;
+        this.figureFrom = figureFrom;
         oldFigureTo = to.getFigure();
         oldFigureFrom = from.getFigure();
+
     }
 
     @Override
     public void make() {
-        from.setFigure(null);
-        to.setFigure(figure);
+        from.setFigure(figureFrom);
+        to.setFigure(figureTo);
     }
 
     @Override
@@ -47,9 +54,8 @@ public class Move implements IMove {
         return to;
     }
 
-    @Override
-    public Figure getFigure() {
-        return figure;
+    public Figure getFigureTo() {
+        return figureTo;
     }
 
     //TODO: Нарушаем принципы чистого кода. Вынести в отдельный интерфейс стратегию
@@ -79,7 +85,7 @@ public class Move implements IMove {
         if (getTo() != null ? !getTo().equals(move.getTo()) : move.getTo() != null) return false;
         if (oldFigureFrom != null ? !oldFigureFrom.equals(move.oldFigureFrom) : move.oldFigureFrom != null)
             return false;
-        return getFigure() != null ? getFigure().equals(move.getFigure()) : move.getFigure() == null;
+        return getFigureTo() != null ? getFigureTo().equals(move.getFigureTo()) : move.getFigureTo() == null;
     }
 
     @Override
@@ -87,13 +93,13 @@ public class Move implements IMove {
         int result = getFrom() != null ? getFrom().hashCode() : 0;
         result = 31 * result + (getTo() != null ? getTo().hashCode() : 0);
         result = 31 * result + (oldFigureFrom != null ? oldFigureFrom.hashCode() : 0);
-        result = 31 * result + (getFigure() != null ? getFigure().hashCode() : 0);
+        result = 31 * result + (getFigureTo() != null ? getFigureTo().hashCode() : 0);
 
         return result;
     }
 
     @Override
     public String toString() {
-        return from + "->" + to + ":" + figure;
+        return from + "->" + to + ":" + figureTo;
     }
 }
